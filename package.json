@@ -1,0 +1,30 @@
+{
+  "name": "pi-sense-hat-library-sample",
+  "version": "1.0.0",
+  "description": "Sample application using pi-sense-hat-library and pi-sense-hat-remote-simulator to interact with Pi SenseHat",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "node node_modules/pi-sense-hat-remote-simulator/cjs/scripts/run-server.js 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanjane/pi-sense-hat-remote-simulator.git"
+  },
+  "author": "Joan Jané",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joanjane/pi-sense-hat-remote-simulator/issues"
+  },
+  "homepage": "https://github.com/joanjane/pi-sense-hat-remote-simulator#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "nodeimu": "^2.1.12",
+    "sense-hat-led": "1.0.1",
+    "sense-joystick": "0.0.3",
+    "pi-sense-hat-library": "git+https://github.com/joanjane/pi-sense-hat-library.git"
+  },
+  "devDependencies": {
+    "pi-sense-hat-remote-simulator": "git+https://github.com/joanjane/pi-sense-hat-remote-simulator.git"
+  }
+}
