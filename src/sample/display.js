@@ -19,7 +19,7 @@ module.exports.runDisplayTest = function (display, onFinish) {
     () => { display.setPixel('*', 4, '#bb44ee') },    // You can render an horizontal line at 4th row of pixels
     () => { display.setPixel(3, '*', '#ff00ff') },    // You can render a vertical line at 3rd row of pixels
     () => { display.setPixels(testPixels) },          // You can render all pixels defining a matrix of pixels
-    () => { display.showMessage(`This is a test message ${Date.now()}`, 1, '#bbaa00') }, // You can flash messages too
+    () => { display.showMessage(`This is a test message ${Date.now()}`, 0.1, '#bbaa00') }, // You can flash messages too
     () => { console.log('Finished'), display.clear(), onFinish && onFinish() },
   ];
 
