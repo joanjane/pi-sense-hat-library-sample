@@ -26,7 +26,6 @@ Promise.all([
 });
 
 function App(display, joystick, environmentSensors, motionSensors) {
-  display.setPixel('*', '*', '#004400');
   runDisplayTest(display);
 
   joystick.on('press', (e) => {
@@ -35,9 +34,9 @@ function App(display, joystick, environmentSensors, motionSensors) {
     if (e === 'up') {
       environmentSensors.getSensorsStatus().then(envSensorsStatus => {
         console.log(JSON.stringify(envSensorsStatus));
-        display.showMessage('Temperature: ' + envSensorsStatus.temperature + ' C', 1, '#004400', () => {
-          display.showMessage('Humidity: ' + envSensorsStatus.humidity + '%', 1, '#440000', () => {
-            display.showMessage('Pressure: ' + envSensorsStatus.pressure + 'hPa', 1, '#000044');
+        display.showMessage('Temperature: ' + envSensorsStatus.temperature + ' C', 0.2, '#004400', () => {
+          display.showMessage('Humidity: ' + envSensorsStatus.humidity + '%', 0.2, '#440000', () => {
+            display.showMessage('Pressure: ' + envSensorsStatus.pressure + 'hPa', 0.2, '#000044');
           });
         });
       });
@@ -60,8 +59,8 @@ function App(display, joystick, environmentSensors, motionSensors) {
         display.showMessage('Orient[x,y,z]: ' + vector[0] + '/' + vector[1] + '/' + vector[2], 0.2, '#aa3300');
       });
     } else if (e === 'click') {
-      console.log(JSON.stringify(motionStatus));
       motionSensors.getMotionStatus().then((motionStatus) => {
+        console.log(JSON.stringify(motionStatus));
         display.showMessage('Compass: ' + motionStatus.compass + 'deg', 0.2, '#33aa00');
       });
     }
