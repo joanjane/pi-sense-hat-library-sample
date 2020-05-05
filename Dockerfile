@@ -24,4 +24,4 @@ RUN npm install
 COPY . ./
 
 # Execute our code when the continer starts up
-ENTRYPOINT npm start
+CMD ["npm", "start"]

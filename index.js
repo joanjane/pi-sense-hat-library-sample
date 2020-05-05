@@ -26,6 +26,7 @@ Promise.all([
 });
 
 function App(display, joystick, environmentSensors, motionSensors) {
+  display.clear();
   runDisplayTest(display);
 
   joystick.on('press', (e) => {
@@ -67,3 +68,13 @@ function App(display, joystick, environmentSensors, motionSensors) {
     }
   });
 }
+ 
+const shutdown = (signal) => {
+  console.log(`${signal} signal received.`);
+  display.clear();
+  [display,joystick,motionSensors,environmentSensors].forEach(c => c.close());
+  process.exit(0);
+};
+
+process.on('SIGINT', shutdown);
+
