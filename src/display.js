@@ -10,7 +10,8 @@ function remoteDisplayClientFactory() {
 
 function displayFactory() {
   const { Display } = require('pi-sense-hat-library/cjs');
-  const display = new Display();
+  const enableLogs = true;
+  const display = new Display(enableLogs);
 
   return display;
 }
