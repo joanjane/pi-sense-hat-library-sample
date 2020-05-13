@@ -22,7 +22,8 @@ module.exports.runDisplayTest = function (display, onFinish) {
     () => { display.showMessage(`This is a test message`, 0.2, '#bbaa00', '#0000ff')
       .then(
         () => { console.log('Finished'), display.clear(), onFinish && onFinish() }
-      ),
+      );
+    }
   ];
 
   console.log('Starting...');
