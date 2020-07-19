@@ -33,7 +33,7 @@ function App(display, joystick, environmentSensors, motionSensors) {
     console.log('joystick press ' + e);
     // 'left' | 'up' | 'right' | 'down' | 'click'
     if (e === 'up') {
-      environmentSensors.getSensorStatus().then(envSensorsStatus => {
+      environmentSensors.getSensorsStatus().then(envSensorsStatus => {
         console.log(motionStatus);
         display.showMessage('Temperature: ' + envSensorsStatus.temperature + ' C', 1, '#004400').then(() => {
           display.showMessage('Humidity: ' + envSensorsStatus.humidity + '%', 1, '#440000').then(() => {
